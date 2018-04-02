@@ -75,9 +75,9 @@ Author's custom styles
     background-color: #fff;
     border-radius: 10px;
     
-    -webkit-box-shadow: 4px 6px 8px -1px rgba(0,0,0,0.37);
-    -moz-box-shadow: 4px 6px 8px -1px rgba(0,0,0,0.37);
-    box-shadow: 4px 6px 8px -1px rgba(0,0,0,0.37);
+    -webkit-box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.57);
+    -moz-box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.57);
+    box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.57);
     font-family: 'Raleway', cursive;
 }
 
