@@ -10,7 +10,6 @@ NC='\033[0m'
 BUCKET="s3://sandeep.sh"
 BUILD_DIR="$PARENT_PATH/build"
 
-BUILD_CMD="mkdir -p build && cp index.html build/ && cp sandeepfavicon.ico build/ && cp -R css build/ && cp -R img build/"
 CLEAR_CMD="aws s3 rm $BUCKET --recursive"
 UPLOAD_CMD="aws s3 sync $BUILD_DIR $BUCKET"
 
@@ -18,8 +17,12 @@ UPLOAD_CMD="aws s3 sync $BUILD_DIR $BUCKET"
 # -------------------------------------------------------------------
 
 echo -e "\n-------$YELLOW Building for Production $NC-------"
-echo -e $BUILD_CMD
-$BUILD_CMD
+rm -rf build && \
+mkdir -p build && \
+cp index.html build/ && \
+cp sandeepfavicon.ico build/ && \
+cp -R css build/ && \
+cp -R img build/
 
 echo -e "\n-------$YELLOW Clearing S3 Bucket $NC-------"
 echo -e $CLEAR_CMD
