@@ -21,6 +21,7 @@ rm -rf build && \
 mkdir -p build && \
 cp index.html build/ && \
 cp sandeepfavicon.ico build/ && \
+cp Sandeep-Jadoonanan-Resume.pdf build/ && \
 cp -R css build/ && \
 cp -R img build/
 
