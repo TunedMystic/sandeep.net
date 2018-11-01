@@ -74,11 +74,13 @@ Author's custom styles
 .main-section {
     background-color: #fff;
     border-radius: 10px;
-    
-    -webkit-box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.57);
-    -moz-box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.57);
-    box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.57);
     font-family: 'Raleway', cursive;
+}
+
+.shadow {
+    -webkit-box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.33);
+    -moz-box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.33);
+    box-shadow: 4px 6px 10px 1px rgba(0,0,0,0.33);
 }
 
 .name {
