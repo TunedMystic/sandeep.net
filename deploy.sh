@@ -23,7 +23,9 @@ cp index.html build/ && \
 cp sandeepfavicon.ico build/ && \
 cp Sandeep-Jadoonanan-Resume.pdf build/ && \
 cp -R css build/ && \
-cp -R img build/
+cp -R images build/ && \
+cp -R js build/ && \
+cp -R fonts build/
 
 echo -e "\n-------$YELLOW Clearing S3 Bucket $NC-------"
 echo -e $CLEAR_CMD
