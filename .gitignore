@@ -1,4 +1,4 @@
 misc/
 build/
 .DS_Store
-public/
+# public/
