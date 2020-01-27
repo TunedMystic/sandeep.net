@@ -1,3 +1,3 @@
 ### Personal Website
 
-![Sandeep.sh](/website.png)
+sandeep.sh
