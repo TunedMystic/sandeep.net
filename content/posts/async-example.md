@@ -29,9 +29,10 @@ async def fetch(url):
                 'status': response.status,
             }
 
-# Get a reference to the event loop
+# Get the event loop
 loop = asyncio.get_event_loop()
 
+# Prepare coroutines.
 requests = [fetch("https://github.com"),
             fetch("https://google.com"),
             fetch("http://httpbin.org/uuid"),
@@ -43,5 +44,4 @@ responses = loop.run_until_complete(asyncio.gather(*requests))
 # Examine responses
 for resp in responses:
     print(resp)
-
 ```
