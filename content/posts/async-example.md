@@ -9,11 +9,10 @@ date = "2020-01-26"
 categories = [
     "Python",
 ]
-menu = "main"
 draft = false
 +++
 
-A simple python asyncio example which fetches urls concurrently.
+A simple python asyncio example which fetches urls concurrently. <!--more-->
 
 ```python
 import asyncio

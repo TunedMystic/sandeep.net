@@ -3,14 +3,44 @@ languageCode = "en-us"
 title = "sandeep.sh"
 DefaultContentLanguage = "en"
 
-theme = "hugo-journal"
+theme = "anubis"
+paginate = 10
 
 [params]
   description = "Notes and thoughts"
   githubUsername = "TunedMystic"
   twitterUsername = "tunedmystic"
   tagline = "Notes and thoughts"
+  style = "light-without-switcher"
 
 [author]
   name = "Sandeep.sh"
   homepage = "https://sandeep.sh/"
+
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Archive"
+    identifier = "archive"
+    url = "/posts/"
+    weight = 3
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[markup.goldmark.renderer]
+unsafe = true
