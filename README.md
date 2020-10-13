@@ -1,4 +1,0 @@
-### Personal Website
-
-sandeep.sh
-
