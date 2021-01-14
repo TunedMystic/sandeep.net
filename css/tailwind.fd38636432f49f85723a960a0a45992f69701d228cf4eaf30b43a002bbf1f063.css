@@ -624,12 +624,6 @@ video {
   background-color: rgba(247, 250, 252, var(--bg-opacity));
 }
 
-.border-gray-300 {
-  --border-opacity: 1;
-  border-color: #e2e8f0;
-  border-color: rgba(226, 232, 240, var(--border-opacity));
-}
-
 .rounded {
   border-radius: 0.25rem;
 }
@@ -644,10 +638,6 @@ video {
 
 .rounded-full {
   border-radius: 9999px;
-}
-
-.border-b-2 {
-  border-bottom-width: 2px;
 }
 
 .block {

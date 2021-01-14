@@ -104,7 +104,8 @@
     margin-right: auto;
 
     /* max-width: 45rem; ~-> 720px */
-    max-width: 650px;
+    /* max-width: 650px; */
+    max-width: 750px;
 }
 
 /* All elements should be this font */
