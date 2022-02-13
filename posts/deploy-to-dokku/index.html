@@ -10,20 +10,20 @@
 
 
     
-    <meta property="og:image" content="https://sandeep.sh/img/deploy-to-dokku/lede.jpg">
-    <meta name="twitter:image" content="https://sandeep.sh/img/deploy-to-dokku/lede.jpg">
+    <meta property="og:image" content="https://sandeep.net/img/deploy-to-dokku/lede.jpg">
+    <meta name="twitter:image" content="https://sandeep.net/img/deploy-to-dokku/lede.jpg">
 
 
     <meta property="og:title" content="Deploy to Dokku in 10 steps" />
 <meta property="og:description" content="Learn how to make deployments easy with Dokku." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sandeep.sh/posts/deploy-to-dokku/" />
-<meta property="og:image" content="https://sandeep.sh/img/sandeep.jpg"/>
+<meta property="og:url" content="https://sandeep.net/posts/deploy-to-dokku/" /><meta property="og:image" content="https://sandeep.net/img/sandeep.jpg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-01-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-01-01T00:00:00+00:00" /><meta property="og:site_name" content="sandeep.sh" />
+<meta property="article:modified_time" content="2021-01-01T00:00:00+00:00" /><meta property="og:site_name" content="sandeep.net" />
+
 
     <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://sandeep.sh/img/sandeep.jpg"/>
+<meta name="twitter:image" content="https://sandeep.net/img/sandeep.jpg"/>
 
 <meta name="twitter:title" content="Deploy to Dokku in 10 steps"/>
 <meta name="twitter:description" content="Learn how to make deployments easy with Dokku."/>
@@ -32,12 +32,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Source+Sans+Pro:wght@400;900&display=swap" rel="stylesheet">
 
     
-    <link rel="stylesheet" href="https://sandeep.sh/css/tailwind.fd38636432f49f85723a960a0a45992f69701d228cf4eaf30b43a002bbf1f063.css">
+    <link rel="stylesheet" href="https://sandeep.net/css/tailwind.fd38636432f49f85723a960a0a45992f69701d228cf4eaf30b43a002bbf1f063.css">
 
     
-    <link rel="stylesheet" href="https://sandeep.sh/css/main.08b5b719c251640d5e26ac8c094260312d142ba085fc12f85d6887866f807402.css">
+    <link rel="stylesheet" href="https://sandeep.net/css/main.08b5b719c251640d5e26ac8c094260312d142ba085fc12f85d6887866f807402.css">
 
-    <title>Sandeep.sh - Deploy to Dokku in 10 steps</title>
+    <title>Sandeep.net - Deploy to Dokku in 10 steps</title>
     <script data-goatcounter="https://sandeepsh.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 
@@ -51,7 +51,7 @@
         
         <header class="relative flex items-center justify-between mb-10 md:mb-16"> 
             <a class="slanted z-10" href='/'>
-                <h4 class="inline-block relative">sandeep.sh</h4>
+                <h4 class="inline-block relative">sandeep.net</h4>
             </a>
             <div class="flex">
                 
@@ -91,19 +91,19 @@
 
         
         <div class="mt-8 markdown"><p><a href="http://dokku.viewdocs.io/dokku/">Dokku</a> is an open-source Platform as a Service which makes it really easy to deploy your Docker application to a remote server. Let&rsquo;s explore how we can deploy with Dokku in 10 steps. I&rsquo;ll be deploying <a href="https://github.com/TunedMystic/greetings-dokku">this sample Django project</a>, so you can grab the source code if you want to follow along.</p>
-<p><br /></p>
+<br />
 <p>In this walkthrough, we&rsquo;ll cover:</p>
 <p>   •  Setting up Dokku on a remote server 🐳</p>
 <p>   •  Configuring persistent storage 📦</p>
 <p>   •  Adding a custom domain 🏷</p>
 <p>   •  Configuring HTTPS with letsencrypt 🔒</p>
-<p><br /></p>
+<br />
 <p>Alrighty! Let&rsquo;s get started! 😎</p>
-<p><br /></p>
+<br />
 <h1 id="1-spin-up-a-linux-box-">1. Spin up a linux box! 🐳</h1>
 <p>I&rsquo;m going to use <a href="https://www.digitalocean.com/">DigitalOcean</a> to create a Droplet. I&rsquo;m using a Dokku one-click install droplet, so that Dokku + Docker will already be installed on it.</p>
 <p><img src="/img/deploy-to-dokku/1.png" alt="Digital Ocean"></p>
-<p><br /></p>
+<br />
 <h1 id="2-dokku-setup-">2. Dokku setup 🐳</h1>
 <p>After the droplet has been created, navigate to the droplet&rsquo;s IP address to complete the setup. For this walkthrough, my droplet&rsquo;s IP address is <code>174.138.55.63</code>.</p>
 <p>You might see an nginx startup page, or even get a <strong>502 Bad Gateway</strong> error. Don&rsquo;t worry, that&rsquo;s just Dokku setting itself up.</p>
@@ -111,110 +111,110 @@
 <p><img src="/img/deploy-to-dokku/2.png" alt="Digital Ocean"></p>
 <p>DigitalOcean should already prefill the SSH key on the Dokku Setup page.</p>
 <p>If everything looks ok, click &ldquo;<strong>Finish Setup</strong>&rdquo; at the bottom of the page.</p>
-<p><br /></p>
+<br />
 <h1 id="3-create-a-dokku-application-">3. Create a Dokku application 🐳</h1>
 <p>Let&rsquo;s SSH into the droplet (the linux box we just spun up).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ssh root@174.138.55.63
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ssh root@174.138.55.63
+</code></pre></div><br />
 <blockquote>
 <p>💡</p>
 <p>Dokku provides a bunch of helpful info for each command.</p>
 <p>Run <code>dokku COMMAND:help</code> to see details for any given COMMAND.</p>
 </blockquote>
-<p><br /></p>
+<br />
 <p>Lets create an app called &ldquo;<strong>greetings</strong>&rdquo; with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku apps:create greetings
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku apps:create greetings
+</code></pre></div><br />
 <p>You can view the list of Dokku apps with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku apps:list
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku apps:list
+</code></pre></div><br />
 <h1 id="4-persistent-storage-">4. Persistent storage 📦</h1>
 <p>Everytime we make a deploy, Dokku builds our application and starts a new Docker container. The old container is destroyed, along with all its data.</p>
 <p>But sometimes we want data to &ldquo;outlive&rdquo; the container lifecycle. This is called <strong>persistent storage</strong>, and we can achieve this by mounting data from our droplet to our Dokku application.</p>
 <p>According to the Dokku <a href="http://dokku.viewdocs.io/dokku/advanced-usage/persistent-storage/">docs</a>, it&rsquo;s recommended that we put mountable data in the <code>/var/lib/dokku/data/storage</code> directory.</p>
 <p>In this walkthrough we want to persist a SQLite database for our Django application. So let&rsquo;s SCP it up to the droplet from our dev machine.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">scp ./greetings.sqlite3 root@174.138.55.63:/var/lib/dokku/data/storage/greetings.sqlite3
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">scp ./greetings.sqlite3 root@174.138.55.63:/var/lib/dokku/data/storage/greetings.sqlite3
+</code></pre></div><br />
 <p>Then in our droplet, we want to mount the SQLite db to the <strong>greetings</strong> application</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku storage:mount greetings /var/lib/dokku/data/storage/greetings.sqlite3:/app/greetings.sqlite3
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku storage:mount greetings /var/lib/dokku/data/storage/greetings.sqlite3:/app/greetings.sqlite3
+</code></pre></div><br />
 <p>Finally, we can check the mounts for the <strong>greetings</strong> application with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku storage:list greetings
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku storage:list greetings
+</code></pre></div><br />
 <h1 id="5-deploy-our-application">5. Deploy our application</h1>
 <p>On the droplet, initialize a git repository for the <strong>greetings</strong> application. This will allow us to push the repo from our dev machine to the droplet.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku git:initialize greetings
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku git:initialize greetings
+</code></pre></div><br />
 <p>On your dev machine, make a new git remote that points to our droplet.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote add dokku dokku@174.138.55.63:greetings
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote add dokku dokku@174.138.55.63:greetings
+</code></pre></div><br />
 <p>Let&rsquo;s deploy the application from our dev machine to the droplet with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push dokku master
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push dokku master
+</code></pre></div><br />
 <p>We&rsquo;ll see a bunch of build logs. That&rsquo;s Dokku building our application.</p>
 <p><img src="/img/deploy-to-dokku/4.png" alt="Digital Ocean"></p>
-<p><br /></p>
+<br />
 <p>After a brief minute, the build should be successful, and it should be deployed to something like
-<a href="https://sandeep.sh">http://myprojects:7000</a></p>
+<a href="https://sandeep.net">http://myprojects:7000</a></p>
 <p><code>myprojects</code> is the name of our droplet.</p>
 <p><code>7000</code> is the port that the docker application is running on.</p>
-<p><br /></p>
+<br />
 <p>🙌 Yay our app is now deployed &hellip; but it&rsquo;s not publicly accessible yet 😓</p>
 <p>Why? &hellip; we&rsquo;ll need to setup port forwarding rules for our <strong>greetings</strong> application.</p>
-<p><br /></p>
+<br />
 <h1 id="6-configure-port-forwaring-">6. Configure port forwaring 🏷</h1>
 <p>Dokku is listening on port 80, but it doesn&rsquo;t know how to forward the request to our application <em>(which is running on port 7000)</em>.</p>
 <p>Let&rsquo;s check the proxy settings for our app with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku proxy:report greetings
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku proxy:report greetings
+</code></pre></div><br />
 <p>Now, lets configure Dokku to route traffic from port <code>80</code> to the <strong>greetings</strong> application on port <code>7000</code> with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku proxy:ports-set greetings http:80:7000
-</code></pre></div><p><br /></p>
-<p>Now, we should be able to access our Dokku application on <a href="http://greetings.sandeep.sh">http://174.138.55.63</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku proxy:ports-set greetings http:80:7000
+</code></pre></div><br />
+<p>Now, we should be able to access our Dokku application on <a href="http://greetings.sandeep.net">http://174.138.55.63</a>.</p>
 <blockquote>
 <p>💡</p>
 <p>Our droplet is running Dokku, which is listening on port <code>80</code>.</p>
 <p>We have configured Dokku to route traffic from port <code>80</code> to our <strong>greetings</strong> application on port <code>7000</code>.</p>
 </blockquote>
-<p><br /></p>
+<br />
 <h1 id="7-add-a-custom-domain-">7. Add a custom domain 🏷</h1>
 <p>We need to set a domain for our Dokku app.</p>
-<p>I&rsquo;m going to use a subdomain of my personal site, <a href="https://greetings.sandeep.sh">greetings.sandeep.sh</a></p>
+<p>I&rsquo;m going to use a subdomain of my personal site, <a href="https://greetings.sandeep.net">greetings.sandeep.net</a></p>
 <p>In your domain registrar&rsquo;s dashboard, create an A record that points to the IP address of the droplet.</p>
 <p><img src="/img/deploy-to-dokku/5.png" alt="Digital Ocean"></p>
-<p><br /></p>
+<br />
 <p>Then, configure the domain for the <strong>greetings</strong> application with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku domains:set greetings greetings.sandeep.sh
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku domains:set greetings greetings.sandeep.net
+</code></pre></div><br />
 <h1 id="8-configure-https-with-letsencrypt-">8. Configure HTTPS with LetsEncrypt 🔒</h1>
 <p>We first have to download the <strong>lets-encrypt</strong> plugin for Dokku.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
+</code></pre></div><br />
 <p>We should now have the <code>letsencrypt</code> community plugin command in Dokku.</p>
 <p>Let&rsquo;s set the <code>DOKKU_LETSENCRYPT_EMAIL</code> config in our app.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku config:set --no-restart greetings <span style="color:#8be9fd;font-style:italic">DOKKU_LETSENCRYPT_EMAIL</span><span style="color:#ff79c6">=</span>myemail@gmail.com
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku config:set --no-restart greetings <span style="color:#8be9fd;font-style:italic">DOKKU_LETSENCRYPT_EMAIL</span><span style="color:#ff79c6">=</span>myemail@gmail.com
+</code></pre></div><br />
 <p>Check that the config has been set properly with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku config:show greetings
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku config:show greetings
+</code></pre></div><br />
 <p>Then we can enable a letsencrypt certificate for our app with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku letsencrypt greetings
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku letsencrypt greetings
+</code></pre></div><br />
 <p>The certificate should be generated.</p>
 <p><img src="/img/deploy-to-dokku/6.png" alt="Digital Ocean"></p>
-<p><br /></p>
+<br />
 <p>Check that our app is listening on port <code>443</code> with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku proxy:report greetings
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku proxy:report greetings
+</code></pre></div><br />
 <h1 id="9-auto-renew-letsencrypt-certificate-">9. Auto-renew LetsEncrypt certificate 🔒</h1>
 <p>Check the status of our certificates with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku letsencrypt:ls
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku letsencrypt:ls
+</code></pre></div><br />
 <p>We can setup a cron job to auto renew our certificate with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku letsencrypt:cron-job --add
-</code></pre></div><p><br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dokku letsencrypt:cron-job --add
+</code></pre></div><br />
 <h1 id="10-view-our-live-application">10. View our live application!</h1>
-<p>Nice! Our application should be available on <a href="https://sandeep.sh">https://greetings.sandeep.sh</a>.</p>
+<p>Nice! Our application should be available on <a href="https://sandeep.net">https://greetings.sandeep.net</a>.</p>
 <p><img src="/img/deploy-to-dokku/7.png" alt="Digital Ocean"></p>
 <p>And we&rsquo;re done!</p>
 <p>As a quick recap, in this blog post we learned how to deploy a dockerized Django app to our Dokku server.
@@ -236,7 +236,7 @@ We enabled port forwarding, configured persistent storage, setup a custom domain
 
 
 
-<a class="mx-1" href="https://twitter.com/share?url=https%3a%2f%2fsandeep.sh%2fposts%2fdeploy-to-dokku%2f&text=Deploy%20to%20Dokku%20in%2010%20steps&via=" target="_blank">
+<a class="mx-1" href="https://twitter.com/share?url=https%3a%2f%2fsandeep.net%2fposts%2fdeploy-to-dokku%2f&text=Deploy%20to%20Dokku%20in%2010%20steps&via=" target="_blank">
     <svg style="background-color: #1DA1F2" class="text-white fill-current w-8 h-8 p-1 rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.316,6.246c0.008,0.162,0.011,0.326,0.011,0.488c0,4.99-3.797,10.742-10.74,10.742  c-2.133,0-4.116-0.625-5.787-1.697c0.296,0.035,0.596,0.053,0.9,0.053c1.77,0,3.397-0.604,4.688-1.615  c-1.651-0.031-3.046-1.121-3.526-2.621c0.23,0.043,0.467,0.066,0.71,0.066c0.345,0,0.679-0.045,0.995-0.131  C2.84,11.183,1.539,9.658,1.539,7.828c0-0.016,0-0.031,0-0.047c0.509,0.283,1.092,0.453,1.71,0.473  c-1.013-0.678-1.68-1.832-1.68-3.143c0-0.691,0.186-1.34,0.512-1.898C3.942,5.498,6.725,7,9.862,7.158  C9.798,6.881,9.765,6.594,9.765,6.297c0-2.084,1.689-3.773,3.774-3.773c1.086,0,2.067,0.457,2.756,1.191  c0.859-0.17,1.667-0.484,2.397-0.916c-0.282,0.881-0.881,1.621-1.66,2.088c0.764-0.092,1.49-0.293,2.168-0.594  C18.694,5.051,18.054,5.715,17.316,6.246z"/></svg>
 </a>
 
@@ -299,7 +299,7 @@ We enabled port forwarding, configured persistent storage, setup a custom domain
 
 
     
-    <p style="font-size: 1.1rem;" class="sans text-gray-500">&copy; 2019-2021 Sandeep Jadoonanan</p>
+    <p style="font-size: 1.1rem;" class="sans text-gray-500">&copy; 2019-2022 Sandeep Jadoonanan</p>
 
 </footer>
 

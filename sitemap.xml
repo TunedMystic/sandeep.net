@@ -1,58 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://sandeep.sh/posts/deploy-to-dokku/</loc>
+    <loc>https://sandeep.net/posts/deploy-to-dokku/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/tags/digitalocean/</loc>
+  </url><url>
+    <loc>https://sandeep.net/tags/digitalocean/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/tags/dokku/</loc>
+  </url><url>
+    <loc>https://sandeep.net/tags/dokku/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/</loc>
+  </url><url>
+    <loc>https://sandeep.net/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/posts/</loc>
+  </url><url>
+    <loc>https://sandeep.net/posts/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/tags/</loc>
+  </url><url>
+    <loc>https://sandeep.net/tags/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/tags/async/</loc>
+  </url><url>
+    <loc>https://sandeep.net/tags/async/</loc>
     <lastmod>2020-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/tags/python/</loc>
+  </url><url>
+    <loc>https://sandeep.net/tags/python/</loc>
     <lastmod>2020-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/posts/python-async-example/</loc>
+  </url><url>
+    <loc>https://sandeep.net/posts/python-async-example/</loc>
     <lastmod>2020-01-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sandeep.net/about/</loc>
+  </url><url>
+    <loc>https://sandeep.net/contact/</loc>
   </url>
-  
-  <url>
-    <loc>https://sandeep.sh/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sandeep.sh/contact/</loc>
-  </url>
-  
 </urlset>
